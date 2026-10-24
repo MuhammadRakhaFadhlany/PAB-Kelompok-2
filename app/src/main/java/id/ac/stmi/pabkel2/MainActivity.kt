@@ -1,20 +1,39 @@
 package id.ac.stmi.pabkel2
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        val tvWelcome = findViewById<TextView>(R.id.tvWelcome)
+        val btnCatalog = findViewById<Button>(R.id.btnCatalog)
+        val btnCart = findViewById<Button>(R.id.btnCart)
+        val btnServiceCenter = findViewById<Button>(R.id.btnServiceCenter)
+        val btnOrderStatus = findViewById<Button>(R.id.btnOrderStatus)
+
+        tvWelcome.text = "Selamat Datang di Auto Parts Hub!"
+
+        btnCatalog.setOnClickListener {
+            startActivity(Intent(this, CatalogActivity::class.java))
+        }
+
+        btnCart.setOnClickListener {
+            startActivity(Intent(this, CartActivity::class.java))
+        }
+
+        btnServiceCenter.setOnClickListener {
+            startActivity(Intent(this, ServiceCenterActivity::class.java))
+        }
+
+        btnOrderStatus.setOnClickListener {
+            startActivity(Intent(this, OrderStatusActivity::class.java))
         }
     }
 }
