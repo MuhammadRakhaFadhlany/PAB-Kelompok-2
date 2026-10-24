@@ -11,52 +11,75 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PABkel2">
+
+        <!-- Halaman Utama -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
+        <!-- Splash Screen -->
         <activity
             android:name=".SplashActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- Login -->
         <activity
             android:name=".LoginActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- Register -->
         <activity
             android:name=".RegisterActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- Katalog Produk -->
         <activity
             android:name=".CatalogActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- Detail Produk -->
         <activity
             android:name=".DetailProductActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- Keranjang -->
         <activity
             android:name=".CartActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- Checkout -->
         <activity
             android:name=".CheckoutActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- Status Pesanan -->
         <activity
             android:name=".OrderStatusActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- Service Center -->
         <activity
             android:name=".ServiceCenterActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
     </application>
 
 </manifest>
