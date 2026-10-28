@@ -1,20 +1,50 @@
 package id.ac.stmi.pabkel2
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import id.ac.stmi.pabkel2.manager.CartManager
+import java.text.NumberFormat
+import java.util.Locale
 
 class CheckoutActivity : AppCompatActivity() {
+    private fun money(value: Double) = NumberFormat.getCurrencyInstance(Locale("id", "ID")).format(value).replace(",00", "")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_checkout)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        val items = CartManager.getItems()
+        findViewById<EditText>(R.id.etAddress).setText(getSharedPreferences("geara", MODE_PRIVATE).getString("shipping_address", ""))
+        findViewById<ListView>(R.id.lvCheckoutItems).adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1,
+            items.map { "${it.product.name} | ${it.quantity} unit x ${money(it.product.price)} = ${money(it.subtotal)}" })
+
+        val subtotal = CartManager.getSubtotal()
+        val tax = (subtotal * 0.10).toInt().toDouble()
+        val shipping = if (subtotal == 0.0) 0.0 else 3000.0
+        val total = subtotal + tax + shipping
+        findViewById<TextView>(R.id.tvSubtotal).text = "Subtotal: ${money(subtotal)}"
+        findViewById<TextView>(R.id.tvTax).text = "Pajak dan biaya: ${money(tax)}"
+        findViewById<TextView>(R.id.tvShipping).text = "Ongkir: ${money(shipping)}"
+        findViewById<TextView>(R.id.tvTotal).text = "Total: ${money(total)}"
+
+        findViewById<Button>(R.id.btnPlaceOrder).setOnClickListener {
+            val address = findViewById<EditText>(R.id.etAddress)
+            val value = address.text.toString().trim()
+            when {
+                items.isEmpty() -> Toast.makeText(this, "Keranjang masih kosong", Toast.LENGTH_SHORT).show()
+                value.isBlank() -> { address.error = "Alamat wajib diisi"; address.requestFocus() }
+                else -> {
+                    getSharedPreferences("geara", MODE_PRIVATE).edit()
+                        .putString("shipping_address", value)
+                        .putInt("order_subtotal", subtotal.toInt())
+                        .putInt("order_tax", tax.toInt())
+                        .putInt("order_shipping", shipping.toInt())
+                        .putInt("order_total", total.toInt())
+                        .apply()
+                    startActivity(Intent(this, PaymentActivity::class.java))
+                }
+            }
         }
     }
 }

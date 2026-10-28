@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#FFF9EF" android:fillViewport="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="22dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Profil Saya" android:textColor="#40231C" android:textSize="26sp" android:textStyle="bold" />
+        <TextView android:id="@+id/tvProfileAccount" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:padding="18dp" android:background="#F8CF59" android:text="Akun Geara" android:textColor="#40231C" android:textSize="20sp" android:textStyle="bold" />
+        <Button android:id="@+id/btnProfileOrders" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="18dp" android:backgroundTint="#F4511E" android:text="Riwayat Transaksi" android:textAllCaps="false" android:textColor="#FFFFFF" />
+        <Button android:id="@+id/btnMyProfile" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="8dp" android:backgroundTint="#FFFFFF" android:text="Data Profil" android:textAllCaps="false" android:textColor="#40231C" />
+        <Button android:id="@+id/btnShippingAddress" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="8dp" android:backgroundTint="#FFFFFF" android:text="Alamat Pengiriman" android:textAllCaps="false" android:textColor="#40231C" />
+        <Button android:id="@+id/btnPaymentMethod" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="8dp" android:backgroundTint="#FFFFFF" android:text="Metode Pembayaran" android:textAllCaps="false" android:textColor="#40231C" />
+        <Button android:id="@+id/btnProfileHelp" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="8dp" android:backgroundTint="#FFDDD0" android:text="Pusat Layanan" android:textAllCaps="false" android:textColor="#F4511E" />
+        <Button android:id="@+id/btnProfileSettings" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="8dp" android:backgroundTint="#FFFFFF" android:text="Pengaturan" android:textAllCaps="false" android:textColor="#40231C" />
+        <Button android:id="@+id/btnLogout" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="18dp" android:backgroundTint="#F4511E" android:text="Keluar" android:textAllCaps="false" android:textColor="#FFFFFF" />
+    </LinearLayout>
+</ScrollView>

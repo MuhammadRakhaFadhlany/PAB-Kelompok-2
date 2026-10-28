@@ -1,9 +1,8 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.PABkel2" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
-
-    <style name="Theme.PABkel2" parent="Base.Theme.PABkel2" />
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<style name="Base.Theme.PABkel2" parent="Theme.Material3.DayNight.NoActionBar">
+<item name="colorPrimary">@color/geara_orange</item><item name="colorSecondary">@color/geara_yellow</item>
+<item name="android:fontFamily">sans</item><item name="android:statusBarColor">@color/geara_yellow</item>
+<item name="android:windowLightStatusBar">false</item><item name="android:windowFullscreen">true</item><item name="android:windowBackground">@color/geara_background</item>
+</style><style name="Theme.PABkel2" parent="Base.Theme.PABkel2"/>
 </resources>

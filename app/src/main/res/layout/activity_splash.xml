@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SplashActivity">
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="28dp" android:background="#F8CE58">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="GEARA" android:textColor="#40231C" android:textSize="42sp" android:textStyle="bold"/>
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Your Trusted Spare Parts Partner" android:textColor="#40231C" android:textSize="14sp"/>
+<Button android:id="@+id/btnStart" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="42dp" android:backgroundTint="#F4511E" android:text="Mulai" android:textAllCaps="false" android:textColor="#FFFFFF"/>
+</LinearLayout>

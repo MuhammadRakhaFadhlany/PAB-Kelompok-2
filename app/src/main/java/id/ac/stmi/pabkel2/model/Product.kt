@@ -1,4 +1,4 @@
-package id.ac.stmi.pabkel2.model
+﻿package id.ac.stmi.pabkel2.model
 
 data class Product(
     val id: Int,
@@ -8,5 +8,6 @@ data class Product(
     val price: Double,
     val compatibility: String,
     val description: String,
+    val stock: Int,
     val image: Int = 0
 )

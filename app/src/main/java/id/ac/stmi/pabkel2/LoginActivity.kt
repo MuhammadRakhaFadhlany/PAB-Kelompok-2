@@ -1,20 +1,33 @@
-package id.ac.stmi.pabkel2
+﻿package id.ac.stmi.pabkel2
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_login)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        val email = findViewById<EditText>(R.id.etEmail)
+        val password = findViewById<EditText>(R.id.etPassword)
+        email.setText(getSharedPreferences("geara", MODE_PRIVATE).getString("customer_email", ""))
+        findViewById<Button>(R.id.btnLogin).setOnClickListener {
+            val address = email.text.toString().trim()
+            when {
+                address.isBlank() -> email.error = "Email wajib diisi"
+                !android.util.Patterns.EMAIL_ADDRESS.matcher(address).matches() -> email.error = "Format email belum benar"
+                password.text.isNullOrEmpty() -> password.error = "Password wajib diisi"
+                else -> {
+                    getSharedPreferences("geara", MODE_PRIVATE).edit().putString("customer_email", address).apply()
+                    startActivity(Intent(this, MainActivity::class.java))
+                    finish()
+                }
+            }
+        }
+        findViewById<TextView>(R.id.tvRegister).setOnClickListener { startActivity(Intent(this, RegisterActivity::class.java)) }
+        findViewById<TextView>(R.id.tvForgotPassword).setOnClickListener {
+            Toast.makeText(this, "Hubungi Pusat Layanan untuk bantuan akun", Toast.LENGTH_SHORT).show()
         }
     }
 }

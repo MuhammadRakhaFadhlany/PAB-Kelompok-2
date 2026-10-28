@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".LoginActivity">
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#FFF9EF" android:fillViewport="true">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="28dp">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="GEARA" android:textColor="#40231C" android:textSize="24sp" android:textStyle="bold"/>
+<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="52dp" android:text="Selamat Datang!" android:textColor="#40231C" android:textSize="30sp" android:textStyle="bold"/>
+<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Masuk untuk menemukan suku cadang kendaraan yang kamu butuhkan." android:textColor="#887B74" android:textSize="14sp"/>
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="32dp" android:text="Email" android:textColor="#40231C" android:textStyle="bold"/>
+<EditText android:id="@+id/etEmail" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="8dp" android:background="@drawable/bg_login_input" android:hint="Masukkan email" android:inputType="textEmailAddress" android:paddingHorizontal="16dp"/>
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="Password" android:textColor="#40231C" android:textStyle="bold"/>
+<EditText android:id="@+id/etPassword" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="8dp" android:background="@drawable/bg_login_input" android:hint="Masukkan password" android:inputType="textPassword" android:paddingHorizontal="16dp"/>
+<TextView android:id="@+id/tvForgotPassword" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:gravity="end" android:text="Lupa password?" android:textColor="#F4511E"/>
+<Button android:id="@+id/btnLogin" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="24dp" android:backgroundTint="#F4511E" android:text="Masuk" android:textAllCaps="false" android:textColor="#FFFFFF"/>
+<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="22dp" android:gravity="center" android:text="Belum punya akun?" android:textColor="#887B74"/>
+<TextView android:id="@+id/tvRegister" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp" android:gravity="center" android:text="Daftar sekarang" android:textColor="#F4511E" android:textStyle="bold"/>
+</LinearLayout></ScrollView>

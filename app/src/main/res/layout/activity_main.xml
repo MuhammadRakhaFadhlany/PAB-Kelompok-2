@@ -1,119 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F5F5F5">
-
-    <TextView
-        android:id="@+id/tvAppName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
-        android:text="AUTO PARTS HUB"
-        android:textColor="#263238"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvWelcome"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-        android:text="Selamat Datang di Auto Parts Hub!"
-        android:textColor="#455A64"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvAppName" />
-
-    <TextView
-        android:id="@+id/tvDescription"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:text="Temukan suku cadang kendaraan dan layanan otomotif yang kamu butuhkan."
-        android:textColor="#607D8B"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvWelcome" />
-
-    <TextView
-        android:id="@+id/tvMenuTitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
-        android:text="Menu Utama"
-        android:textColor="#263238"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvDescription" />
-
-    <Button
-        android:id="@+id/btnCatalog"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:text="Katalog Produk"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvMenuTitle" />
-
-    <Button
-        android:id="@+id/btnCart"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-        android:text="Keranjang Belanja"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnCatalog" />
-
-    <Button
-        android:id="@+id/btnServiceCenter"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-        android:text="Service Center"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnCart" />
-
-    <Button
-        android:id="@+id/btnOrderStatus"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-        android:text="Status Pesanan"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnServiceCenter" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#FFF9EF" android:fillViewport="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:paddingStart="22dp" android:paddingEnd="22dp" android:paddingTop="18dp" android:paddingBottom="20dp" android:background="#F8CF59">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                <EditText android:id="@+id/etHomeSearch" android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1"
+                    android:background="@drawable/bg_login_input" android:hint="Cari suku cadang..." android:imeOptions="actionSearch" android:inputType="text"
+                    android:paddingStart="13dp" android:paddingEnd="13dp" android:singleLine="true" android:textSize="13sp" />
+                <TextView android:id="@+id/btnNotifications" android:layout_width="48dp" android:layout_height="46dp" android:gravity="center" android:contentDescription="Notifikasi" android:text="Info" android:textColor="#F4511E" android:textSize="10sp" android:textStyle="bold" />
+                <TextView android:id="@+id/btnCart" android:layout_width="46dp" android:layout_height="46dp" android:gravity="center"
+                    android:contentDescription="Keranjang" android:text="Keranjang" android:textColor="#F4511E" android:textSize="10sp" android:textStyle="bold" />
+                <TextView android:id="@+id/btnProfile" android:layout_width="46dp" android:layout_height="46dp" android:gravity="center"
+                    android:contentDescription="Profil" android:text="Profil" android:textColor="#F4511E" android:textSize="10sp" android:textStyle="bold" />
+            </LinearLayout>
+            <TextView android:id="@+id/tvWelcome" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="12dp" android:text="Halo, Sobat Geara!" android:textColor="#FFFFFF" android:textSize="25sp" android:textStyle="bold" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Temukan suku cadang untuk kendaraanmu" android:textColor="#F4511E" android:textSize="13sp" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="18dp">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Kategori" android:textColor="#40231C" android:textSize="18sp" android:textStyle="bold" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center" android:layout_marginTop="8dp">
+                <TextView android:id="@+id/catRem" android:layout_width="0dp" android:layout_height="64dp" android:layout_weight="1" android:gravity="center" android:text="Rem" android:textColor="#F4511E" android:textStyle="bold" />
+                <TextView android:id="@+id/catMesin" android:layout_width="0dp" android:layout_height="64dp" android:layout_weight="1" android:gravity="center" android:text="Mesin" android:textColor="#F4511E" android:textStyle="bold" />
+                <TextView android:id="@+id/catFilter" android:layout_width="0dp" android:layout_height="64dp" android:layout_weight="1" android:gravity="center" android:text="Filter" android:textColor="#F4511E" android:textStyle="bold" />
+                <TextView android:id="@+id/catLampu" android:layout_width="0dp" android:layout_height="64dp" android:layout_weight="1" android:gravity="center" android:text="Lampu" android:textColor="#F4511E" android:textStyle="bold" />
+                <TextView android:id="@+id/catOli" android:layout_width="0dp" android:layout_height="64dp" android:layout_weight="1" android:gravity="center" android:text="Oli" android:textColor="#F4511E" android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:layout_marginTop="10dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Terlaris" android:textColor="#40231C" android:textSize="18sp" android:textStyle="bold" />
+                <Button android:id="@+id/btnCatalog" android:layout_width="wrap_content" android:layout_height="42dp" android:text="Semua" android:textAllCaps="false" android:textColor="#F4511E" android:backgroundTint="#FFF9EF" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <TextView android:id="@+id/homeProduct1" android:layout_width="0dp" android:layout_height="112dp" android:layout_weight="1" android:layout_margin="3dp" android:background="#FFFFFF" android:gravity="center" android:text="Busi Iridium\nRp45.000" android:textColor="#40231C" android:textSize="12sp" />
+                <TextView android:id="@+id/homeProduct2" android:layout_width="0dp" android:layout_height="112dp" android:layout_weight="1" android:layout_margin="3dp" android:background="#FFFFFF" android:gravity="center" android:text="Kampas Rem\nRp120.000" android:textColor="#40231C" android:textSize="12sp" />
+                <TextView android:id="@+id/homeProduct3" android:layout_width="0dp" android:layout_height="112dp" android:layout_weight="1" android:layout_margin="3dp" android:background="#FFFFFF" android:gravity="center" android:text="Filter Udara\nRp65.000" android:textColor="#40231C" android:textSize="12sp" />
+            </LinearLayout>
+            <TextView android:layout_width="match_parent" android:layout_height="118dp" android:layout_marginTop="14dp" android:background="#F4511E" android:gravity="center" android:text="Rawat kendaraanmu\nPesan suku cadang dengan mudah" android:textColor="#FFFFFF" android:textSize="18sp" android:textStyle="bold" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="Bantuan dan pesanan" android:textColor="#40231C" android:textSize="18sp" android:textStyle="bold" />
+            <Button android:id="@+id/btnOrderStatus" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="8dp" android:backgroundTint="#F4511E" android:text="Riwayat Transaksi" android:textAllCaps="false" android:textColor="#FFFFFF" />
+            <Button android:id="@+id/btnServiceCenter" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="8dp" android:backgroundTint="#FFDDD0" android:text="Pusat Layanan" android:textAllCaps="false" android:textColor="#F4511E" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

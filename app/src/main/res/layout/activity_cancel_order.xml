@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="#F7F7F7">
+    <TextView android:layout_width="match_parent" android:layout_height="88dp" android:gravity="center" android:background="#F8CF59" android:text="Batalkan Pesanan" android:textColor="#FFFFFF" android:textSize="23sp" android:textStyle="bold" />
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingStart="24dp" android:paddingEnd="24dp" android:paddingTop="12dp" android:paddingBottom="12dp">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingTop="12dp" android:paddingBottom="12dp" android:text="Pilih alasan pembatalan" android:textColor="#40231C" android:textSize="14sp" />
+            <RadioGroup android:id="@+id/rgCancelReason" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                <RadioButton android:id="@+id/reasonVehicle" android:layout_width="match_parent" android:layout_height="52dp" android:text="Produk tidak sesuai kebutuhan kendaraan" android:textColor="#40231C" android:buttonTint="#F4511E" />
+                <RadioButton android:id="@+id/reasonWrong" android:layout_width="match_parent" android:layout_height="52dp" android:text="Salah memilih produk" android:textColor="#40231C" android:buttonTint="#F4511E" />
+                <RadioButton android:id="@+id/reasonQuantity" android:layout_width="match_parent" android:layout_height="52dp" android:text="Ingin mengubah jumlah barang" android:textColor="#40231C" android:buttonTint="#F4511E" />
+                <RadioButton android:id="@+id/reasonAccidental" android:layout_width="match_parent" android:layout_height="52dp" android:text="Pesanan dibuat tanpa sengaja" android:textColor="#40231C" android:buttonTint="#F4511E" />
+                <RadioButton android:id="@+id/reasonPrice" android:layout_width="match_parent" android:layout_height="52dp" android:text="Menemukan harga yang lebih sesuai" android:textColor="#40231C" android:buttonTint="#F4511E" />
+                <RadioButton android:id="@+id/reasonDelivery" android:layout_width="match_parent" android:layout_height="52dp" android:text="Estimasi pengiriman terlalu lama" android:textColor="#40231C" android:buttonTint="#F4511E" />
+                <RadioButton android:id="@+id/reasonOther" android:layout_width="match_parent" android:layout_height="52dp" android:text="Lainnya" android:textColor="#40231C" android:buttonTint="#F4511E" />
+            </RadioGroup>
+            <EditText android:id="@+id/etCancelOther" android:layout_width="match_parent" android:layout_height="92dp" android:gravity="top" android:hint="Alasan lainnya..." android:inputType="textMultiLine|textCapSentences" android:padding="14dp" android:background="#F6EBB1" />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingStart="18dp" android:paddingEnd="18dp" android:paddingBottom="8dp">
+        <Button android:id="@+id/btnKeepOrder" android:layout_width="0dp" android:layout_height="50dp" android:layout_weight="1" android:layout_marginEnd="5dp" android:backgroundTint="#FFDDD0" android:text="Kembali" android:textAllCaps="false" android:textColor="#F4511E" />
+        <Button android:id="@+id/btnSubmitCancel" android:layout_width="0dp" android:layout_height="50dp" android:layout_weight="1" android:layout_marginStart="5dp" android:backgroundTint="#F4511E" android:text="Kirim" android:textAllCaps="false" android:textColor="#FFFFFF" />
+    </LinearLayout>
+</LinearLayout>

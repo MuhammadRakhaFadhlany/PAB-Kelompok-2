@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-</resources>
+<color name="black">#FF000000</color><color name="white">#FFFFFFFF</color>
+<color name="geara_yellow">#F8CE58</color><color name="geara_orange">#F4511E</color>
+<color name="geara_background">#FFF9EF</color><color name="geara_brown">#40231C</color>
+<color name="geara_gray">#887B74</color><color name="geara_border">#E8DCD2</color>
+<color name="geara_peach">#FFFFDDD0</color></resources>

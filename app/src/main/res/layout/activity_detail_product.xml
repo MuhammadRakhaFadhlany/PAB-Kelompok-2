@@ -1,10 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".DetailProductActivity">
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#FFF9EF" android:fillViewport="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="22dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Detail Produk" android:textColor="#40231C" android:textSize="25sp" android:textStyle="bold" />
+        <ImageView android:id="@+id/imgDetail" android:layout_width="match_parent" android:layout_height="200dp"
+            android:layout_marginTop="20dp" android:src="@android:drawable/ic_menu_gallery"
+            android:background="#F0E9E1" android:scaleType="centerInside" />
+        <TextView android:id="@+id/tvDetailName" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="18dp" android:text="Nama Produk" android:textColor="#40231C" android:textSize="24sp" android:textStyle="bold" />
+        <TextView android:id="@+id/tvDetailPrice" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" android:text="Rp0" android:textColor="#F4511E" android:textSize="22sp" android:textStyle="bold" />
+        <TextView android:id="@+id/tvDetailCode" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" android:text="Kode produk" android:textColor="#887B74" />
+        <TextView android:id="@+id/tvDetailDescription" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" android:text="Deskripsi produk" android:textColor="#40231C" android:textSize="16sp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="22dp" android:text="Jumlah yang ingin dibeli" android:textColor="#40231C" android:textStyle="bold" />
+        <EditText android:id="@+id/etQuantity" android:layout_width="match_parent" android:layout_height="52dp"
+            android:layout_marginTop="8dp" android:hint="Jumlah" android:inputType="number" android:text="1"
+            android:background="@drawable/bg_login_input" android:paddingHorizontal="12dp" />
+        <TextView android:id="@+id/tvDetailSelectedTotal" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" android:text="Total: Rp0" android:textColor="#40231C" android:textSize="18sp" android:textStyle="bold" />
+        <Button android:id="@+id/btnAddToCart" android:layout_width="match_parent" android:layout_height="54dp"
+            android:layout_marginTop="16dp" android:backgroundTint="#F4511E" android:text="Tambah ke Keranjang"
+            android:textAllCaps="false" android:textColor="#FFFFFF" />
+    </LinearLayout>
+</ScrollView>

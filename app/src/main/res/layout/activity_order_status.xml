@@ -1,10 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".OrderStatusActivity">
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="20dp" android:background="#FFF9EF">
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Riwayat Transaksi" android:textColor="#40231C" android:textSize="25sp" android:textStyle="bold" />
+    <TextView android:id="@+id/tvOrderStatus" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:padding="18dp" android:background="#FFFFFF" android:text="Belum ada transaksi" android:textColor="#887B74" android:textSize="15sp" />
+    <ListView android:id="@+id/lvOrders" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_marginTop="8dp" android:divider="#E8DCD2" android:dividerHeight="8dp" />
+    <Button android:id="@+id/btnBackHome" android:layout_width="match_parent" android:layout_height="52dp" android:layout_marginTop="12dp" android:backgroundTint="#F4511E" android:text="Kembali ke Beranda" android:textAllCaps="false" android:textColor="#FFFFFF" />
+</LinearLayout>
