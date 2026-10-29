@@ -33,9 +33,23 @@
                 <Button android:id="@+id/btnCatalog" android:layout_width="wrap_content" android:layout_height="42dp" android:text="Semua" android:textAllCaps="false" android:textColor="#F4511E" android:backgroundTint="#FFF9EF" />
             </LinearLayout>
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                <TextView android:id="@+id/homeProduct1" android:layout_width="0dp" android:layout_height="112dp" android:layout_weight="1" android:layout_margin="3dp" android:background="#FFFFFF" android:gravity="center" android:text="Busi Iridium\nRp45.000" android:textColor="#40231C" android:textSize="12sp" />
-                <TextView android:id="@+id/homeProduct2" android:layout_width="0dp" android:layout_height="112dp" android:layout_weight="1" android:layout_margin="3dp" android:background="#FFFFFF" android:gravity="center" android:text="Kampas Rem\nRp120.000" android:textColor="#40231C" android:textSize="12sp" />
-                <TextView android:id="@+id/homeProduct3" android:layout_width="0dp" android:layout_height="112dp" android:layout_weight="1" android:layout_margin="3dp" android:background="#FFFFFF" android:gravity="center" android:text="Filter Udara\nRp65.000" android:textColor="#40231C" android:textSize="12sp" />
+                <LinearLayout android:id="@+id/homeProduct1" android:layout_width="0dp" android:layout_height="140dp" android:layout_weight="1" android:layout_margin="3dp" android:background="#FFFFFF" android:orientation="vertical" android:gravity="center" android:padding="6dp" android:clickable="true" android:focusable="true">
+                    <ImageView android:id="@+id/imgHomeProduct1" android:layout_width="56dp" android:layout_height="56dp" android:src="@drawable/busi_iridium" android:scaleType="centerInside" android:contentDescription="Busi Iridium" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Busi Iridium" android:textColor="#40231C" android:textSize="12sp" android:textStyle="bold" android:layout_marginTop="4dp" android:gravity="center" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rp45.000" android:textColor="#F4511E" android:textSize="11sp" />
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/homeProduct2" android:layout_width="0dp" android:layout_height="140dp" android:layout_weight="1" android:layout_margin="3dp" android:background="#FFFFFF" android:orientation="vertical" android:gravity="center" android:padding="6dp" android:clickable="true" android:focusable="true">
+                    <ImageView android:id="@+id/imgHomeProduct2" android:layout_width="56dp" android:layout_height="56dp" android:src="@drawable/kampas_rem_mobil" android:scaleType="centerInside" android:contentDescription="Kampas Rem" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Kampas Rem" android:textColor="#40231C" android:textSize="12sp" android:textStyle="bold" android:layout_marginTop="4dp" android:gravity="center" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rp120.000" android:textColor="#F4511E" android:textSize="11sp" />
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/homeProduct3" android:layout_width="0dp" android:layout_height="140dp" android:layout_weight="1" android:layout_margin="3dp" android:background="#FFFFFF" android:orientation="vertical" android:gravity="center" android:padding="6dp" android:clickable="true" android:focusable="true">
+                    <ImageView android:id="@+id/imgHomeProduct3" android:layout_width="56dp" android:layout_height="56dp" android:src="@drawable/filter_udara" android:scaleType="centerInside" android:contentDescription="Filter Udara" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Filter Udara" android:textColor="#40231C" android:textSize="12sp" android:textStyle="bold" android:layout_marginTop="4dp" android:gravity="center" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rp65.000" android:textColor="#F4511E" android:textSize="11sp" />
+                </LinearLayout>
             </LinearLayout>
             <TextView android:layout_width="match_parent" android:layout_height="118dp" android:layout_marginTop="14dp" android:background="#F4511E" android:gravity="center" android:text="Rawat kendaraanmu\nPesan suku cadang dengan mudah" android:textColor="#FFFFFF" android:textSize="18sp" android:textStyle="bold" />
             <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="Bantuan dan pesanan" android:textColor="#40231C" android:textSize="18sp" android:textStyle="bold" />

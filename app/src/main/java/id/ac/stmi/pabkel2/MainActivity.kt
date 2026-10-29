@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         mapOf(R.id.catRem to "Rem", R.id.catMesin to "Mesin", R.id.catFilter to "Filter", R.id.catLampu to "Lampu", R.id.catOli to "Oli")
             .forEach { (id, category) -> findViewById<TextView>(id).setOnClickListener { openCatalog(category) } }
         mapOf(R.id.homeProduct1 to 3, R.id.homeProduct2 to 1, R.id.homeProduct3 to 5)
-            .forEach { (id, productId) -> findViewById<TextView>(id).setOnClickListener { openDetail(productId) } }
+            .forEach { (id, productId) -> findViewById<android.view.View>(id).setOnClickListener { openDetail(productId) } }
     }
 
     private fun openCatalog(category: String? = null) {

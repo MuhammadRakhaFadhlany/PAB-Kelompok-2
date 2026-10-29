@@ -6,6 +6,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +21,7 @@ class DetailProductActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_product)
         val product = ProductCatalog.byId(intent.getIntExtra("PRODUCT_ID", 1)) ?: ProductCatalog.products.first()
+        findViewById<ImageView>(R.id.imgDetail).setImageResource(if (product.image != 0) product.image else android.R.drawable.ic_menu_gallery)
         findViewById<TextView>(R.id.tvDetailName).text = product.name
         findViewById<TextView>(R.id.tvDetailPrice).text = money(product.price)
         findViewById<TextView>(R.id.tvDetailCode).text = "Kode: ${product.code} | Kategori: ${product.category} | Stok: ${product.stock} unit"

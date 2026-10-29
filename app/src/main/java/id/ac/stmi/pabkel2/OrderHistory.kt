@@ -42,7 +42,7 @@ object OrderHistory {
             .put("total", total)
             .put("address", address)
             .put("method", method)
-            .put("status", "Pesanan diterima")
+            .put("status", "Belum Dibayar")
             .put("cancelReason", "")
             .put("rating", 0)
             .put("review", ""))

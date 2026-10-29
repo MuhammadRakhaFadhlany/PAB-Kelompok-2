@@ -15,6 +15,7 @@ class CartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
+        findViewById<TextView>(R.id.btnCartBack).setOnClickListener { finish() }
         findViewById<Button>(R.id.btnCheckout).setOnClickListener {
             if (CartManager.getItems().isEmpty()) Toast.makeText(this, "Keranjang masih kosong", Toast.LENGTH_SHORT).show()
             else startActivity(android.content.Intent(this, CheckoutActivity::class.java))
@@ -27,9 +28,11 @@ class CartActivity : AppCompatActivity() {
     private fun render() {
         val items = CartManager.getItems()
         val list = findViewById<ListView>(R.id.lvCart)
-        val rows = if (items.isEmpty()) listOf("Keranjang masih kosong. Pilih produk dari katalog untuk mulai berbelanja.")
-        else items.map { "${it.product.name}\n${it.quantity} unit x ${money(it.product.price)} = ${money(it.subtotal)}\nKetuk untuk ubah jumlah; tekan lama untuk hapus" }
-        list.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, rows)
+        if (items.isEmpty()) {
+            list.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listOf("Keranjang masih kosong. Pilih produk dari katalog untuk mulai berbelanja."))
+        } else {
+            list.adapter = id.ac.stmi.pabkel2.adapter.CartAdapter(items)
+        }
         list.setOnItemClickListener { _, _, position, _ -> if (items.isNotEmpty()) editQuantity(items[position].product.id, items[position].quantity, items[position].product.stock) }
         list.setOnItemLongClickListener { _, _, position, _ ->
             if (items.isNotEmpty()) {

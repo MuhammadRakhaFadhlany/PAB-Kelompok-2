@@ -17,7 +17,12 @@ class ReviewActivity : AppCompatActivity() {
         orderId = intent.getStringExtra("ORDER_ID").orEmpty()
         val order = OrderHistory.get(this, orderId)
         if (order == null) { finish(); return }
-        findViewById<TextView>(R.id.tvReviewProduct).text = order.items.substringBefore("\n").substringBefore(" =")
+        val productName = order.items.substringBefore("\n").substringBefore(" =").substringBefore(" x")
+        findViewById<TextView>(R.id.tvReviewProduct).text = productName
+        val matchedProduct = ProductCatalog.products.find { productName.contains(it.name, ignoreCase = true) || it.name.contains(productName, ignoreCase = true) }
+        if (matchedProduct != null && matchedProduct.image != 0) {
+            findViewById<android.widget.ImageView>(R.id.imgReviewProduct).setImageResource(matchedProduct.image)
+        }
         findViewById<RatingBar>(R.id.rbReviewRating).rating = if (order.rating > 0) order.rating else 5f
         findViewById<EditText>(R.id.etReviewText).setText(order.review)
         findViewById<Button>(R.id.btnCancelReview).setOnClickListener { finish() }

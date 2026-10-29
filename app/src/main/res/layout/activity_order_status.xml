@@ -1,7 +1,125 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="20dp" android:background="#FFF9EF">
-    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Riwayat Transaksi" android:textColor="#40231C" android:textSize="25sp" android:textStyle="bold" />
-    <TextView android:id="@+id/tvOrderStatus" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:padding="18dp" android:background="#FFFFFF" android:text="Belum ada transaksi" android:textColor="#887B74" android:textSize="15sp" />
-    <ListView android:id="@+id/lvOrders" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_marginTop="8dp" android:divider="#E8DCD2" android:dividerHeight="8dp" />
-    <Button android:id="@+id/btnBackHome" android:layout_width="match_parent" android:layout_height="52dp" android:layout_marginTop="12dp" android:backgroundTint="#F4511E" android:text="Kembali ke Beranda" android:textAllCaps="false" android:textColor="#FFFFFF" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F8CF59">
+
+    <!-- Header bar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:paddingHorizontal="18dp">
+
+        <TextView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="‹"
+            android:textColor="#F4511E"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Pesanan Saya"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- White Card Container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/bg_rounded_card_top"
+        android:paddingTop="20dp"
+        android:paddingHorizontal="18dp">
+
+        <!-- Tab Filters -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/btnTabAktif"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/bg_tab_pill_selected"
+                android:gravity="center"
+                android:text="Aktif"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/btnTabSelesai"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="3dp"
+                android:background="@drawable/bg_tab_pill_unselected"
+                android:gravity="center"
+                android:text="Selesai"
+                android:textColor="#F4511E"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/btnTabDibatalkan"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/bg_tab_pill_unselected"
+                android:gravity="center"
+                android:text="Dibatalkan"
+                android:textColor="#F4511E"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#F0EAE1"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:id="@+id/tvOrderStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Belum ada pesanan pada kategori ini."
+            android:textColor="#887B74"
+            android:textSize="14sp" />
+
+        <ListView
+            android:id="@+id/lvOrders"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:divider="#F0EAE1"
+            android:dividerHeight="16dp"
+            android:scrollbars="none" />
+    </LinearLayout>
 </LinearLayout>

@@ -1,20 +1,284 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="#F8CF59">
-    <LinearLayout android:layout_width="match_parent" android:layout_height="116dp" android:gravity="center" android:orientation="vertical">
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:text="Pusat Bantuan" android:textColor="#FFFFFF" android:textSize="24sp" android:textStyle="bold" />
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:text="Butuh Bantuan?" android:textColor="#F4511E" android:textSize="14sp" />
-    </LinearLayout>
-    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:background="#F7F7F7">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingStart="26dp" android:paddingEnd="26dp" android:paddingTop="20dp" android:paddingBottom="26dp">
-            <LinearLayout android:layout_width="match_parent" android:layout_height="48dp" android:orientation="horizontal">
-                <Button android:id="@+id/btnFaq" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:backgroundTint="#FFDDD0" android:text="FAQ" android:textAllCaps="false" android:textColor="#F4511E" />
-                <Button android:id="@+id/btnContactSupport" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginStart="10dp" android:backgroundTint="#F4511E" android:text="Hubungi Kami" android:textAllCaps="false" android:textColor="#FFFFFF" />
-            </LinearLayout>
-            <TextView android:id="@+id/rowCustomerService" android:layout_width="match_parent" android:layout_height="62dp" android:gravity="center_vertical" android:text="Layanan Pelanggan     v" android:textColor="#40231C" android:textSize="16sp" android:textStyle="bold" />
-            <TextView android:id="@+id/rowWebsite" android:layout_width="match_parent" android:layout_height="56dp" android:gravity="center_vertical" android:text="Situs Web Geara     v" android:textColor="#40231C" android:textSize="16sp" />
-            <TextView android:id="@+id/rowWhatsApp" android:layout_width="match_parent" android:layout_height="56dp" android:gravity="center_vertical" android:text="WhatsApp     v" android:textColor="#40231C" android:textSize="16sp" />
-            <TextView android:id="@+id/rowFacebook" android:layout_width="match_parent" android:layout_height="56dp" android:gravity="center_vertical" android:text="Facebook     v" android:textColor="#40231C" android:textSize="16sp" />
-            <TextView android:id="@+id/rowInstagram" android:layout_width="match_parent" android:layout_height="56dp" android:gravity="center_vertical" android:text="Instagram     v" android:textColor="#40231C" android:textSize="16sp" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F8CF59">
+
+    <!-- Header bar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:paddingHorizontal="18dp">
+
+        <TextView
+            android:id="@+id/btnServiceBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="‹"
+            android:textColor="#F4511E"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hubungi Kami"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Butuh Bantuan?"
+                android:textColor="#F4511E"
+                android:textSize="13sp"
+                android:textStyle="bold" />
         </LinearLayout>
-    </ScrollView>
+    </RelativeLayout>
+
+    <!-- White Card Container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/bg_rounded_card_top"
+        android:paddingTop="20dp"
+        android:paddingHorizontal="20dp">
+
+        <!-- Tab Pills -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/btnTabFaq"
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_tab_pill_unselected"
+                android:gravity="center"
+                android:text="FAQ"
+                android:textColor="#F4511E"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/btnTabContact"
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_tab_pill_selected"
+                android:gravity="center"
+                android:text="Hubungi Kami"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+
+        <!-- Contact Options Container -->
+        <ScrollView
+            android:id="@+id/scrollContactOptions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- 1. Layanan Pelanggan -->
+                <LinearLayout
+                    android:id="@+id/rowCustomerService"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingVertical="8dp">
+
+                    <ImageView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:src="@drawable/ic_headset"
+                        android:contentDescription="Layanan Pelanggan" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:text="Layanan Pelanggan"
+                        android:textColor="#40231C"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_chevron_down"
+                        android:contentDescription="Detail" />
+                </LinearLayout>
+
+                <!-- 2. Situs Web -->
+                <LinearLayout
+                    android:id="@+id/rowWebsite"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingVertical="8dp">
+
+                    <ImageView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:src="@drawable/ic_globe"
+                        android:contentDescription="Situs Web" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:text="Situs Web"
+                        android:textColor="#40231C"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_chevron_down"
+                        android:contentDescription="Detail" />
+                </LinearLayout>
+
+                <!-- 3. WhatsApp -->
+                <LinearLayout
+                    android:id="@+id/rowWhatsApp"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingVertical="8dp">
+
+                    <ImageView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:src="@drawable/ic_whatsapp"
+                        android:contentDescription="WhatsApp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:text="WhatsApp"
+                        android:textColor="#40231C"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_chevron_down"
+                        android:contentDescription="Detail" />
+                </LinearLayout>
+
+                <!-- 4. Facebook -->
+                <LinearLayout
+                    android:id="@+id/rowFacebook"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingVertical="8dp">
+
+                    <ImageView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:src="@drawable/ic_facebook"
+                        android:contentDescription="Facebook" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:text="Facebook"
+                        android:textColor="#40231C"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_chevron_down"
+                        android:contentDescription="Detail" />
+                </LinearLayout>
+
+                <!-- 5. Instagram -->
+                <LinearLayout
+                    android:id="@+id/rowInstagram"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingVertical="8dp">
+
+                    <ImageView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:src="@drawable/ic_instagram"
+                        android:contentDescription="Instagram" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:text="Instagram"
+                        android:textColor="#40231C"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_chevron_down"
+                        android:contentDescription="Detail" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 </LinearLayout>

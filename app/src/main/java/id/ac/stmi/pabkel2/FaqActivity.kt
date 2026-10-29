@@ -1,6 +1,5 @@
 ﻿package id.ac.stmi.pabkel2
 
-import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -31,15 +30,23 @@ class FaqActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_faq)
-        findViewById<Button>(R.id.btnChatTab).setOnClickListener { startActivity(Intent(this, SupportChatActivity::class.java)) }
+
+        findViewById<TextView>(R.id.btnFaqBack).setOnClickListener { finish() }
+        findViewById<TextView>(R.id.btnChatTabPill).setOnClickListener { finish() }
+
         findViewById<Button>(R.id.btnFaqGeneral).setOnClickListener { selectCategory("Umum") }
         findViewById<Button>(R.id.btnFaqAccount).setOnClickListener { selectCategory("Akun") }
         findViewById<Button>(R.id.btnFaqService).setOnClickListener { selectCategory("Layanan") }
+
         findViewById<EditText>(R.id.etFaqSearch).addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) = Unit
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) { query = s?.toString().orEmpty(); render() }
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                query = s?.toString().orEmpty()
+                render()
+            }
             override fun afterTextChanged(s: Editable?) = Unit
         })
+
         render()
     }
 
@@ -48,22 +55,28 @@ class FaqActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnFaqGeneral).backgroundTintList = getColorStateList(if (value == "Umum") R.color.geara_orange else R.color.geara_peach)
         findViewById<Button>(R.id.btnFaqAccount).backgroundTintList = getColorStateList(if (value == "Akun") R.color.geara_orange else R.color.geara_peach)
         findViewById<Button>(R.id.btnFaqService).backgroundTintList = getColorStateList(if (value == "Layanan") R.color.geara_orange else R.color.geara_peach)
+
         findViewById<Button>(R.id.btnFaqGeneral).setTextColor(getColor(if (value == "Umum") R.color.white else R.color.geara_orange))
         findViewById<Button>(R.id.btnFaqAccount).setTextColor(getColor(if (value == "Akun") R.color.white else R.color.geara_orange))
         findViewById<Button>(R.id.btnFaqService).setTextColor(getColor(if (value == "Layanan") R.color.white else R.color.geara_orange))
+
         render()
     }
 
     private fun render() {
         val container = findViewById<LinearLayout>(R.id.faqList)
         container.removeAllViews()
-        val matching = entries.filter { (it.category == category || query.isNotBlank()) && (it.question + " " + it.answer).contains(query, true) && (query.isBlank() || it.category == category || it.question.contains(query, true) || it.answer.contains(query, true)) }
+        val matching = entries.filter {
+            (it.category == category || query.isNotBlank()) &&
+            (it.question + " " + it.answer).contains(query, true)
+        }
+
         matching.forEach { faq ->
             val question = TextView(this).apply {
                 text = faq.question + if (faq.question in openQuestions) "     v" else "     >"
-                textSize = 16f
+                textSize = 15f
                 setTextColor(getColor(R.color.geara_brown))
-                setPadding(2, 17, 2, 17)
+                setPadding(2, 20, 2, 20)
                 gravity = Gravity.CENTER_VERTICAL
                 setOnClickListener {
                     if (!openQuestions.add(faq.question)) openQuestions.remove(faq.question)
@@ -71,8 +84,10 @@ class FaqActivity : AppCompatActivity() {
                 }
             }
             container.addView(question, LinearLayout.LayoutParams(-1, -2))
+
             val divider = View(this).apply { setBackgroundColor(getColor(R.color.geara_border)) }
             container.addView(divider, LinearLayout.LayoutParams(-1, 1))
+
             if (faq.question in openQuestions) {
                 val answer = TextView(this).apply {
                     text = faq.answer
@@ -83,8 +98,13 @@ class FaqActivity : AppCompatActivity() {
                 container.addView(answer, LinearLayout.LayoutParams(-1, -2))
             }
         }
+
         if (matching.isEmpty()) {
-            container.addView(TextView(this).apply { text = "Pertanyaan tidak ditemukan."; setTextColor(getColor(R.color.geara_gray)); setPadding(0, 20, 0, 20) })
+            container.addView(TextView(this).apply {
+                text = "Pertanyaan tidak ditemukan."
+                setTextColor(getColor(R.color.geara_gray))
+                setPadding(0, 20, 0, 20)
+            })
         }
     }
 }

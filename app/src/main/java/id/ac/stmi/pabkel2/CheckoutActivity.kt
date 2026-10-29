@@ -16,8 +16,7 @@ class CheckoutActivity : AppCompatActivity() {
         setContentView(R.layout.activity_checkout)
         val items = CartManager.getItems()
         findViewById<EditText>(R.id.etAddress).setText(getSharedPreferences("geara", MODE_PRIVATE).getString("shipping_address", ""))
-        findViewById<ListView>(R.id.lvCheckoutItems).adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1,
-            items.map { "${it.product.name} | ${it.quantity} unit x ${money(it.product.price)} = ${money(it.subtotal)}" })
+        findViewById<ListView>(R.id.lvCheckoutItems).adapter = id.ac.stmi.pabkel2.adapter.CheckoutAdapter(items)
 
         val subtotal = CartManager.getSubtotal()
         val tax = (subtotal * 0.10).toInt().toDouble()
