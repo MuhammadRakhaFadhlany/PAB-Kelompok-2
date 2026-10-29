@@ -3,7 +3,7 @@
 import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
-import android.widget.Button
+import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -17,21 +17,32 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
         renderAccount()
-        findViewById<Button>(R.id.btnProfileOrders).setOnClickListener { startActivity(Intent(this, OrderStatusActivity::class.java)) }
-        findViewById<Button>(R.id.btnProfileHelp).setOnClickListener { startActivity(Intent(this, ServiceCenterActivity::class.java)) }
-        findViewById<Button>(R.id.btnMyProfile).setOnClickListener { showProfile() }
-        findViewById<Button>(R.id.btnShippingAddress).setOnClickListener { editAddress() }
-        findViewById<Button>(R.id.btnPaymentMethod).setOnClickListener { choosePaymentMethod() }
-        findViewById<Button>(R.id.btnProfileSettings).setOnClickListener { showSettings() }
-        findViewById<Button>(R.id.btnLogout).setOnClickListener {
+
+        findViewById<View>(R.id.btnProfileBack)?.setOnClickListener { finish() }
+        findViewById<View>(R.id.btnProfileOrders).setOnClickListener { startActivity(Intent(this, OrderStatusActivity::class.java)) }
+        findViewById<View>(R.id.btnProfileHelp).setOnClickListener { startActivity(Intent(this, ServiceCenterActivity::class.java)) }
+        findViewById<View>(R.id.btnMyProfile).setOnClickListener { showProfile() }
+        findViewById<View>(R.id.btnShippingAddress).setOnClickListener { editAddress() }
+        findViewById<View>(R.id.btnPaymentMethod).setOnClickListener { choosePaymentMethod() }
+        findViewById<View>(R.id.btnProfileSettings).setOnClickListener { showSettings() }
+        findViewById<View>(R.id.btnLogout).setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK))
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        renderAccount()
+    }
+
     private fun renderAccount() {
         val name = prefs.getString("customer_name", "")?.ifBlank { "Pelanggan Geara" } ?: "Pelanggan Geara"
-        val email = prefs.getString("customer_email", "") ?: ""
-        findViewById<TextView>(R.id.tvProfileAccount).text = "$name\n$email"
+        val email = prefs.getString("customer_email", "")?.ifBlank { "Belum ada email" } ?: "Belum ada email"
+
+        findViewById<TextView>(R.id.tvProfileName)?.text = name
+        findViewById<TextView>(R.id.tvProfileEmail)?.text = email
+        findViewById<TextView>(R.id.tvProfileAvatarText)?.text = name.take(1).uppercase()
+        findViewById<TextView>(R.id.tvProfileAccount)?.text = "$name\n$email"
     }
 
     private fun showProfile() {

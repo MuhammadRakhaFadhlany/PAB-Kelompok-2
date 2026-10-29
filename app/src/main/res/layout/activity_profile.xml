@@ -1,14 +1,427 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#FFF9EF" android:fillViewport="true">
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="22dp">
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Profil Saya" android:textColor="#40231C" android:textSize="26sp" android:textStyle="bold" />
-        <TextView android:id="@+id/tvProfileAccount" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:padding="18dp" android:background="#F8CF59" android:text="Akun Geara" android:textColor="#40231C" android:textSize="20sp" android:textStyle="bold" />
-        <Button android:id="@+id/btnProfileOrders" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="18dp" android:backgroundTint="#F4511E" android:text="Riwayat Transaksi" android:textAllCaps="false" android:textColor="#FFFFFF" />
-        <Button android:id="@+id/btnMyProfile" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="8dp" android:backgroundTint="#FFFFFF" android:text="Data Profil" android:textAllCaps="false" android:textColor="#40231C" />
-        <Button android:id="@+id/btnShippingAddress" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="8dp" android:backgroundTint="#FFFFFF" android:text="Alamat Pengiriman" android:textAllCaps="false" android:textColor="#40231C" />
-        <Button android:id="@+id/btnPaymentMethod" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="8dp" android:backgroundTint="#FFFFFF" android:text="Metode Pembayaran" android:textAllCaps="false" android:textColor="#40231C" />
-        <Button android:id="@+id/btnProfileHelp" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="8dp" android:backgroundTint="#FFDDD0" android:text="Pusat Layanan" android:textAllCaps="false" android:textColor="#F4511E" />
-        <Button android:id="@+id/btnProfileSettings" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="8dp" android:backgroundTint="#FFFFFF" android:text="Pengaturan" android:textAllCaps="false" android:textColor="#40231C" />
-        <Button android:id="@+id/btnLogout" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="18dp" android:backgroundTint="#F4511E" android:text="Keluar" android:textAllCaps="false" android:textColor="#FFFFFF" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F8CF59">
+
+    <!-- Header bar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:paddingHorizontal="18dp">
+
+        <TextView
+            android:id="@+id/btnProfileBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="‹"
+            android:textColor="#F4511E"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Profil Saya"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- White Card Container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/bg_rounded_card_top"
+        android:paddingTop="20dp"
+        android:paddingHorizontal="18dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="24dp">
+
+                <!-- Profile User Card -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_profile_card"
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:id="@+id/tvProfileAvatarText"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/bg_profile_avatar"
+                        android:gravity="center"
+                        android:text="M"
+                        android:textColor="#FFFFFF"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="16dp">
+
+                        <TextView
+                            android:id="@+id/tvProfileName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mahier"
+                            android:textColor="#40231C"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvProfileEmail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="kimindito26@gmail.com"
+                            android:textColor="#887B74"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/bg_tab_pill_unselected"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="3dp"
+                            android:text="Sobat Geara Member"
+                            android:textColor="#F4511E"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Hidden view for backwards compatibility -->
+                <TextView
+                    android:id="@+id/tvProfileAccount"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:visibility="gone" />
+
+                <!-- Section: Transaksi -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Aktivitas Saya"
+                    android:textColor="#40231C"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_menu_group"
+                    android:layout_marginBottom="18dp">
+
+                    <!-- Riwayat Transaksi -->
+                    <LinearLayout
+                        android:id="@+id/btnProfileOrders"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="16dp"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_icon_circle"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_shopping_bag"
+                            android:contentDescription="Riwayat Transaksi" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="14dp"
+                            android:text="Riwayat Transaksi"
+                            android:textColor="#40231C"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_chevron_right"
+                            android:contentDescription="Detail" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Section: Akun -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pengaturan Akun"
+                    android:textColor="#40231C"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_menu_group"
+                    android:layout_marginBottom="18dp">
+
+                    <!-- Data Profil -->
+                    <LinearLayout
+                        android:id="@+id/btnMyProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="16dp"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_icon_circle"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_person"
+                            android:contentDescription="Data Profil" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="14dp"
+                            android:text="Data Profil"
+                            android:textColor="#40231C"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_chevron_right"
+                            android:contentDescription="Detail" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#F0EAE1"
+                        android:layout_marginStart="66dp" />
+
+                    <!-- Alamat Pengiriman -->
+                    <LinearLayout
+                        android:id="@+id/btnShippingAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="16dp"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_icon_circle"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_location"
+                            android:contentDescription="Alamat Pengiriman" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="14dp"
+                            android:text="Alamat Pengiriman"
+                            android:textColor="#40231C"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_chevron_right"
+                            android:contentDescription="Detail" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#F0EAE1"
+                        android:layout_marginStart="66dp" />
+
+                    <!-- Metode Pembayaran -->
+                    <LinearLayout
+                        android:id="@+id/btnPaymentMethod"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="16dp"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_icon_circle"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_wallet"
+                            android:contentDescription="Metode Pembayaran" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="14dp"
+                            android:text="Metode Pembayaran"
+                            android:textColor="#40231C"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_chevron_right"
+                            android:contentDescription="Detail" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Section: Bantuan & Pengaturan -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bantuan &amp; Pengaturan"
+                    android:textColor="#40231C"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_menu_group"
+                    android:layout_marginBottom="24dp">
+
+                    <!-- Pusat Layanan -->
+                    <LinearLayout
+                        android:id="@+id/btnProfileHelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="16dp"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_icon_circle"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_headset"
+                            android:contentDescription="Pusat Layanan" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="14dp"
+                            android:text="Pusat Layanan"
+                            android:textColor="#40231C"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_chevron_right"
+                            android:contentDescription="Detail" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#F0EAE1"
+                        android:layout_marginStart="66dp" />
+
+                    <!-- Pengaturan -->
+                    <LinearLayout
+                        android:id="@+id/btnProfileSettings"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="16dp"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_icon_circle"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_settings"
+                            android:contentDescription="Pengaturan" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="14dp"
+                            android:text="Pengaturan Notifikasi"
+                            android:textColor="#40231C"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_chevron_right"
+                            android:contentDescription="Detail" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Tombol Keluar -->
+                <Button
+                    android:id="@+id/btnLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:backgroundTint="#F4511E"
+                    android:text="Keluar dari Akun"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
-</ScrollView>
+</LinearLayout>
