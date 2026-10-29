@@ -12,14 +12,6 @@ Aplikasi ini dikembangkan sebagai bagian dari tugas praktikum akademik dengan fo
 * **Nama Aplikasi:** AutoParts Hub
 * **Platform:** Android (Kotlin, XML Layout)
 * **Mata Kuliah:** Praktikum Pemrograman Aplikasi Mobile
-* **Institusi:** Politeknik STMI Jakarta
-* **Dosen Pengampu:** Mahisa Ajy Kusuma, S.Kom., MMSI.
-
-### Anggota Tim & Peran
-* **Rakha** — PRD & System Requirements
-* **Gibran** — UI/UX Design
-* **Fakhri** — Implementation / Developer
-* **Mahier** — Dokumentasi & Laporan
 
 ---
 
@@ -48,7 +40,6 @@ Aplikasi ini terdiri dari 7 modul utama:
    * Pengisian alamat pengiriman dan opsi kurir (Reguler / Express) dengan rincian biaya transparan.
    * Simulasi pelacakan status pesanan bertahap (Diproses, Dikemas, Dikirim, Selesai) serta fitur berbagi (share) teks invoice belanja.
 
----
 
 ## 3. Detail Penggunaan & Alur Kerja Aplikasi
 
@@ -79,8 +70,6 @@ Aplikasi ini terdiri dari 7 modul utama:
 * Di pojok kanan atas aplikasi (Katalog, Detail, Keranjang, Status), ketuk ikon titik tiga lalu pilih Bantuan untuk membuka ServiceCenterActivity.
 * Klik tombol Hubungi CS untuk membuka dialer telepon secara otomatis.
 * Ketuk salah satu daftar bengkel mitra tertera untuk membuka aplikasi navigasi peta (Google Maps) menuju lokasi tersebut.
-
----
 
 ## 4. Batasan Sistem (Out-of-Scope)
 Untuk kelancaran pengujian akademik, mohon diperhatikan beberapa batasan sistem berikut:
